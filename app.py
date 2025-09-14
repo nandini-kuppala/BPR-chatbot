@@ -18,7 +18,6 @@ def configure_gemini():
     return genai.GenerativeModel('gemini-1.5-flash')
 
 
-
 def load_questions_from_json():
     """Load questions from local bpr.json file"""
     try:
@@ -56,64 +55,133 @@ def load_questions_from_json():
         st.error("Invalid JSON format in bpr.json!")
         return {}
 
-def validate_response(model, question, user_answer, context=None):
-    """Validate user response and generate follow-up questions if needed"""
+def validate_response(model, question, user_answer, context=None, previous_qa_pairs=None):
+    """Enhanced validation for BRP questionnaire responses with context-aware single follow-up"""
     if not model:
         return True, []
     
     try:
+        # Build context with previous Q&A pairs if available
+        context_section = ""
+        if previous_qa_pairs and len(previous_qa_pairs) > 0:
+            context_section = "\n\nPREVIOUS QUESTIONS AND ANSWERS FOR CONTEXT:\n"
+            for i, qa in enumerate(previous_qa_pairs[-3:], 1):  # Only last 3 for context
+                context_section += f"{i}. Q: {qa['question']}\n   A: {qa['answer']}\n"
+        
         prompt = f"""
-        You are helping with a BRP (Business Requirements Planning) questionnaire for ERP implementation.
-        
-        Question: {question}
-        Context: {context if context else 'No additional context provided'}
-        User's Answer: {user_answer}
-        
-        Evaluate if the user's answer is:
-        1. Clear and specific enough to answer the question
-        2. Relevant to the question asked
-        3. Contains sufficient detail for ERP implementation planning
-        
-        If the answer is adequate, respond with: "ADEQUATE"
-        
-        If the answer needs clarification, respond with "NEEDS_FOLLOWUP" followed by 1-2 specific follow-up questions that will help get better information. Format follow-up questions as a JSON array.
-        
-        Examples of inadequate answers that need follow-up:
-        - Vague answers like "SQL" when asked about database systems (should specify which SQL database)
-        - "Yes" or "No" without details when more context is needed
-        - Irrelevant or off-topic responses
-        
-        Be strict but fair in your evaluation. Only mark as adequate if the answer truly provides the information needed for ERP planning.
+        You are an expert ERP implementation consultant validating responses for a BRP (Business Requirements Planning) questionnaire. Your goal is to ensure responses contain sufficient detail for proper Sage Intacct configuration.
+
+        ORIGINAL QUESTION: {question}
+        CONTEXT: {context if context else 'General BRP questionnaire for ERP implementation'}
+        USER'S RESPONSE: {user_answer}{context_section}
+
+        EVALUATION CRITERIA:
+        A response is ADEQUATE only if it meets ALL these requirements:
+        1. SPECIFICITY: Contains specific names, numbers, amounts, or technical details (not vague terms)
+        2. COMPLETENESS: Fully answers what was asked without leaving major gaps
+        3. RELEVANCE: Directly addresses the question asked
+        4. ERP-READY: Provides actionable information for system configuration
+
+        INADEQUATE RESPONSE EXAMPLES THAT NEED FOLLOW-UP:
+        - Generic terms without specifics: "SQL database" → needs specific system name and version
+        - Vague quantities: "some customers" → needs actual numbers and categorization
+        - Yes/No without context: "Yes, we use accounting software" → needs software name and details
+        - Missing critical details: "We pay suppliers" → needs payment methods, frequency, terms
+        - Incomplete processes: "Manual invoicing" → needs current tools, frequency, volume details
+        - Technical terms without context: "Cloud hosting" → needs provider, setup, specifications
+
+        ADEQUATE RESPONSE EXAMPLES (NO FOLLOW-UP NEEDED):
+        - "Microsoft SQL Server 2019 hosted on AWS with 2TB data"
+        - "23 active customers: 15 small clinics (£10K contracts), 8 enterprise (£100K+)"
+        - "Net 30 payment terms for most suppliers, Net 15 for software vendors, process payments twice weekly via BACS"
+        - "Manual Excel invoicing, 50+ invoices monthly, using basic templates, takes 2 days per month-end"
+
+        IMPORTANT GUIDELINES:
+        - Only ask for follow-up if the response genuinely lacks critical ERP implementation details
+        - If the answer shows good understanding and provides reasonable detail, mark as ADEQUATE
+        - Consider the user's business context and size when evaluating adequacy
+        - A small business saying "5 customers" is adequate; "some customers" is not
+
+        RESPONSE FORMAT:
+        If adequate: Return exactly "ADEQUATE"
+        If inadequate: Return "NEEDS_FOLLOWUP" followed by exactly ONE specific follow-up question.
+
+        FOLLOW-UP QUESTION GUIDELINES:
+        - Ask for the MOST CRITICAL missing detail for ERP configuration
+        - Be specific about what information is needed
+        - Include examples to guide the user
+        - Make it clear and actionable
+
+        EXAMPLE EVALUATIONS:
+
+        Question: "What database system do you currently use?"
+        User Answer: "SQL Server"
+        Evaluation: Missing version and hosting details critical for ERP integration
+        Response: NEEDS_FOLLOWUP Which version of SQL Server are you using and where is it hosted? (e.g., SQL Server 2019 on-premises, SQL Server 2022 on Azure)
+
+        Question: "How many active customers do you have?"
+        User Answer: "Around 20 customers mostly healthcare"
+        Evaluation: Has reasonable specificity for business planning
+        Response: ADEQUATE
+
+        Question: "What are your current business challenges?"
+        User Answer: "Things are difficult"
+        Evaluation: Too vague, needs specific operational issues
+        Response: NEEDS_FOLLOWUP What specific business processes or systems are causing problems? (e.g., manual invoicing taking too long, difficulty tracking inventory, poor financial reporting)
+
+        Question: "What payment terms do you offer customers?"
+        User Answer: "Net 30"
+        Evaluation: Adequate for basic ERP setup
+        Response: ADEQUATE
+
+        Now evaluate the user's response:
         """
         
         response = model.generate_content(prompt)
         response_text = response.text.strip()
         
-        if response_text.startswith("ADEQUATE"):
+        # Parse the response
+        if "ADEQUATE" in response_text and "NEEDS_FOLLOWUP" not in response_text:
             return True, []
-        elif response_text.startswith("NEEDS_FOLLOWUP"):
-            try:
-                # Extract JSON part
-                json_part = response_text.split("NEEDS_FOLLOWUP", 1)[1].strip()
-                followup_questions = json.loads(json_part)
-                return False, followup_questions if isinstance(followup_questions, list) else []
-            except:
-                # Fallback: extract questions manually
-                lines = response_text.split('\n')
-                questions = []
-                for line in lines[1:]:  # Skip first line
-                    line = line.strip()
-                    if line and ('?' in line):
-                        question = line.strip('- "[],"')
-                        if question:
-                            questions.append(question)
-                return False, questions[:2]
+        elif "NEEDS_FOLLOWUP" in response_text:
+            # Extract the follow-up question
+            followup_part = response_text.split("NEEDS_FOLLOWUP", 1)[1].strip()
+            
+            # Clean up the question - remove any formatting
+            followup_question = followup_part.strip('[]"\'')
+            followup_question = followup_question.replace('\n', ' ').strip()
+            
+            if followup_question and len(followup_question) > 10:
+                return False, [followup_question]  # Return as single-item list for consistency
+            else:
+                return True, []  # If we can't extract a proper question, consider adequate
         
-        return True, []  # Default to adequate if unclear
+        # Default to adequate if response format is unclear
+        return True, []
         
     except Exception as e:
-        st.error(f"Error validating response: {str(e)}")
-        return True, []  # Default to adequate if error
+        print(f"Error validating response: {str(e)}")
+        return True, []  # Default to adequate if error occurs
+
+
+def get_previous_qa_context(section_name, current_question_index):
+    """Get previous questions and answers for context"""
+    if section_name not in st.session_state.responses:
+        return []
+    
+    previous_qa = []
+    responses = st.session_state.responses[section_name]
+    questions = st.session_state.sections[section_name]
+    
+    # Get previous answered questions in this section
+    for i in range(min(current_question_index, len(questions))):
+        if i in responses:
+            previous_qa.append({
+                'question': questions[i]['question'],
+                'answer': responses[i]['answer']
+            })
+    
+    return previous_qa
 
 
 def initialize_session_state():
