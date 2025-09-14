@@ -1,0 +1,1159 @@
+{
+    "bpr_questionnaire": {
+        "company_questions": [
+            {
+                "category": "Company",
+                "question": "What is your company's address?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "Who is the CFO of your company?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "Who is the Financial Controller?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "Who is the Finance Assistant?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "What is your business activity/industry?",
+                "context": "Describe what your company does, what industry you operate in"
+            },
+            {
+                "category": "Company",
+                "question": "What is your business vision?",
+                "context": "What are your company's long-term goals and aspirations?"
+            },
+            {
+                "category": "Company",
+                "question": "What are your current business challenges?",
+                "context": "What problems or difficulties is your business facing?"
+            },
+            {
+                "category": "Company",
+                "question": "What is your project vision for implementing Sage Intacct?",
+                "context": "What do you hope to achieve with this ERP implementation?"
+            },
+            {
+                "category": "Company",
+                "question": "Why did you choose Sage Intacct?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "Which Sage Intacct modules do you plan to use?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "What existing software systems do you currently use?",
+                "context": "List your current accounting, ERP, or business software"
+            },
+            {
+                "category": "Company",
+                "question": "What are the benefits and limitations of your current systems?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "Do you use any 3rd party applications or marketplace partners?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "Describe your entity structure and hierarchy",
+                "context": "How is your company organized? Multiple entities, subsidiaries, etc."
+            },
+            {
+                "category": "Company",
+                "question": "Which entities will be migrated to Sage Intacct? Include fiscal year and base currency for each",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "What are your reporting requirements by entity?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "What are your reporting requirements by dimensions?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "Any other reporting requirements?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "How many business licenses do you need?",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "How many employee licenses do you need? (Sold in packs of 10)",
+                "context": null
+            },
+            {
+                "category": "Company",
+                "question": "What is your target go-live date?",
+                "context": null
+            }
+        ],
+        "security_questions": [
+            {
+                "category": "Security",
+                "question": "Who will be administering the Intacct account?",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "What are your password requirements? (Default: 8 characters, Min: 8 Max: 72)",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "How often should users change their passwords? (Default: Quarterly, options: Weekly to Yearly)",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "How many password reset attempts per day? (Default: 5, Min: 1 Max: 10)",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "How many incorrect login attempts before lockout? (Default: 10, Min: 1 Max: 20)",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Inactivity auto-logout preference? (Default: 6 hours, Min: 10 Minutes Max: 6 Hours)",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Session auto-logout preference for workday? (Default: 6 hours, Min: 1 Hour Max: 24 Hours)",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Do you require single sign-on (SSO) or standard sign-on?",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Do you require two-step login verification? (Recommended: Enabled)",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Do you want to use role-based permissions? (Recommended)",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Do you need security restrictions by entity?",
+                "context": "For example: restricting access to customers, suppliers, bank accounts by entity"
+            },
+            {
+                "category": "Security",
+                "question": "Should the system automatically generate inter-entity transactions?",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Do you need basic or advanced inter-entity mapping?",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Should top level transactions be disabled to enforce subledger entity transactions?",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Should AP and AR credits be restricted per entity?",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "Do you want to customize title bar, background, and text color per entity?",
+                "context": null
+            },
+            {
+                "category": "Security",
+                "question": "What is the base currency of each entity?",
+                "context": null
+            }
+        ],
+        "gl_questions": [
+            {
+                "category": "General Ledger",
+                "question": "When does your financial year start?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "How is your financial year defined?",
+                "context": "For example: 12 monthly periods, 13 periods, etc."
+            },
+            {
+                "category": "General Ledger",
+                "question": "How are periods within the financial year defined?",
+                "context": "Default options: Yearly, Quarterly, Monthly"
+            },
+            {
+                "category": "General Ledger",
+                "question": "What are your requirements for closing an accounting period?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "What currencies are involved in your transactions and where are they used?",
+                "context": "For example: USD for purchases, EUR for sales, etc."
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you require unrealized multicurrency gain/loss calculation on open transactions?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you require realized multicurrency gain/loss calculation on open transactions?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "What are your security requirements for creating/deleting GL accounts?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you require statistical accounts for non-financial record keeping?",
+                "context": "For example: square footage, headcount tracking"
+            },
+            {
+                "category": "General Ledger",
+                "question": "How should the system handle attachment numbering - auto or manual?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "What is your Chart of Accounts format?",
+                "context": "For example: 4 digits - 0100 for Office Equipment"
+            },
+            {
+                "category": "General Ledger",
+                "question": "What are your profit centers/departments/divisions?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do any accounts require certain dimensions when used?",
+                "context": "For example: Account 6000 - maintenance requires department"
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you need separate adjustment journals?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you need separate tax adjustment journals?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "What other journal types do you need?",
+                "context": "Default: GL, APJ, ARJ, CDJ, CRJ, etc."
+            },
+            {
+                "category": "General Ledger",
+                "question": "Will you need to upload journal entries?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you need to capture dimension values with journal entries?",
+                "context": "For example: department, employee, location"
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do journals need to be balanced by dimension?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you require automatic GL value distribution to departments/locations?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you require journal entry approval?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you use recurring journal entries?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "Do you use reversing journal entries?",
+                "context": null
+            },
+            {
+                "category": "General Ledger",
+                "question": "How should the system handle future-dated journal entries?",
+                "context": null
+            }
+        ],
+        "financial_reports_questions": [
+            {
+                "category": "Financial Reports",
+                "question": "What are your security requirements for financial reports?",
+                "context": "For example: CFO access only"
+            },
+            {
+                "category": "Financial Reports",
+                "question": "What financial reports do you require?",
+                "context": "For example: Profit and Loss, Balance Sheet, Cash Flow, etc."
+            },
+            {
+                "category": "Financial Reports",
+                "question": "What GL dashboards do you require?",
+                "context": null
+            },
+            {
+                "category": "Financial Reports",
+                "question": "Do you require budget reporting?",
+                "context": null
+            },
+            {
+                "category": "Financial Reports",
+                "question": "What comparative financial statements do you produce?",
+                "context": null
+            },
+            {
+                "category": "Financial Reports",
+                "question": "Do you have any unique reporting requirements?",
+                "context": null
+            },
+            {
+                "category": "Financial Reports",
+                "question": "Which dimensions are required for reporting?",
+                "context": null
+            },
+            {
+                "category": "Financial Reports",
+                "question": "At what level do you track assets and liabilities?",
+                "context": "For example: entity level, department level, division level"
+            },
+            {
+                "category": "Financial Reports",
+                "question": "What tax reporting requirements do you have?",
+                "context": "For example: not VAT registered, group VAT, etc."
+            }
+        ],
+        "cash_questions": [
+            {
+                "category": "Cash Management",
+                "question": "Please detail your current and savings accounts including currencies",
+                "context": "For example: 3 current accounts in GBP, 1 savings account in USD, 1 petty cash in EUR"
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you require bank accounts to be restricted at entity level?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "How do you intend to reconcile bank accounts in Sage Intacct?",
+                "context": "Options: bank feeds, manual entry, statement upload"
+            },
+            {
+                "category": "Cash Management",
+                "question": "Will bank accounts be reconciled at top level or entity level?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you intend to issue BACS payments to suppliers/employees?",
+                "context": "For example: HSBC Net, Lloyds Commercial Banking"
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you require an undeposited funds GL account?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you have restrictions on future postings?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you use company credit cards?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Are multiple credit card accounts combined in single statements?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "How will you handle credit card transactions - manual entry or import?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Will you reconcile credit cards using Sage Intacct?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you pay supplier invoices via credit card?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you transfer funds between bank accounts?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you transfer funds between entities?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you receive payments not associated with customers/invoices?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you make payments not associated with suppliers/invoices/employees?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "Do you process deposits?",
+                "context": null
+            },
+            {
+                "category": "Cash Management",
+                "question": "What other transactions are processed through your bank accounts?",
+                "context": "Besides supplier payments and customer receipts"
+            }
+        ],
+        "ap_questions": [
+            {
+                "category": "Accounts Payable",
+                "question": "How many suppliers are active?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you have a numbering scheme for suppliers?",
+                "context": "Example: S0001"
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you need to limit supplier access by entity?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you group suppliers in any way?",
+                "context": "For example: Subcontractor, maintenance, etc."
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you track employees as suppliers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you have suppliers with parent/child relationships?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "In what currencies do you transact with suppliers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Should contacts be restricted to their suppliers only in drop-downs?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "What are your security requirements for creating new suppliers?",
+                "context": "For example: Finance assistants access only"
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "What payment terms do suppliers give you?",
+                "context": "For example: Net 30, Due upon receipt"
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you record credit limits that suppliers assign to your company?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you use discounted payment terms?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "How should the system respond when supplier credit limits are exceeded?",
+                "context": "Options: Allow, Warn & Allow, Don't allow"
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you put suppliers on hold and how should the system respond?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "How should the system handle future period posting?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you need numbering sequences for supplier credit/debit adjustments?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Should the system enforce unpaid invoice reversals or allow deletion?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you need recurring invoices?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "How should the system handle duplicate invoice numbers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you need automatic invoice allocation to departments/locations?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you need supplier transactions posted to multiple AP GL codes?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you require invoice approval based on amounts?",
+                "context": "For example: CFO approval for >£10,000"
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Describe your tax requirements on invoices",
+                "context": "For example: VAT charged on UK suppliers only"
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Please describe your payment methods",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "What is your default payment method and bank account?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "How frequently do you pay suppliers?",
+                "context": "For example: Biweekly, monthly"
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "From how many bank accounts do you issue supplier payments?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "What criteria do you use to select invoices for payment?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you require payment approvals based on amounts?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you pay deposits/advances to suppliers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "What are your aging period requirements?",
+                "context": "Default: 0-30, 31-60, 61-90, 90+"
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Are aging periods based on invoice date or due date?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "What supplier reports do you require?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Will AP dashboards be required?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you require specific dimension tracking?",
+                "context": null
+            },
+            {
+                "category": "Accounts Payable",
+                "question": "Do you require custom fields for supplier reporting?",
+                "context": null
+            }
+        ],
+        "purchasing_questions": [
+            {
+                "category": "Purchasing",
+                "question": "Describe your desired purchasing process from request to supplier invoice receipt",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Detail each approval phase in your workflow",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "What specific purchasing documents are required in the workflow?",
+                "context": "For example: Purchase Order, Goods Receipt"
+            },
+            {
+                "category": "Purchasing",
+                "question": "Describe your document numbering sequence for each workflow step",
+                "context": "For example: Purchase Order - PO-0001"
+            },
+            {
+                "category": "Purchasing",
+                "question": "Are there editing/deleting restrictions throughout the workflow?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "At which step should VAT be introduced?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Which workflow steps should post to AP and/or GL?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Will any transactions be integrated from external systems?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Do you require pricelists?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Do purchases need budget validation?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "How are purchase orders provided to suppliers?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Describe purchase order format requirements and required fields",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Do purchase orders require supplier-specific information like part numbers?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "List and describe required shipping methods for purchase orders",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Describe requirements for purchase order returns",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "How should blanket purchase orders be handled?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Can you define item groups for purchasing?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Should items be available in both purchasing and order entry?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Are multiple delivery addresses required?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Are goods received in multiple shipments (partial receipts)?",
+                "context": null
+            },
+            {
+                "category": "Purchasing",
+                "question": "Are invoices ever processed without goods receipts?",
+                "context": null
+            }
+        ],
+        "ar_questions": [
+            {
+                "category": "Accounts Receivable",
+                "question": "How many customers are active?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you have a numbering scheme for customers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you need to limit customer access by entity?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you group customers in any way?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you have customers with parent/child relationships?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "In what currencies do you transact with customers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "What are your security requirements for creating new customers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you have customers with multiple billing or shipping addresses?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Does one entity invoice or collect on behalf of another entity?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "What payment terms do you give customers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you assign credit limits to customers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you use discounted payment terms?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "How should the system respond when customer credit limits are exceeded?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you put customers on hold and how should the system respond?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you have a numbering sequence for invoices?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you need numbering sequences for customer credit/debit adjustments?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "How should the system handle future period posting?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Should the system enforce unpaid invoice reversals or allow deletion?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "How should the system handle duplicate invoice numbers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you need automatic invoice allocation to departments/locations?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you need customer transactions posted to multiple AR GL codes?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Describe your tax requirements on customer invoices",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "How many customer payments do you receive per day/week/month?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Please describe your customer payment methods",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Which bank accounts are used for customer payments?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "What should be the default payment method and bank account?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you require an undeposited funds bank account?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you receive deposits from customers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you receive payments in foreign currencies?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you receive partial payments from customers?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "What address should customers send payment remittance to?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "What are your aging period requirements?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Are aging periods based on invoice date or due date?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "What operational reports do you require?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Will AR dashboards be required?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you require specific dimension tracking?",
+                "context": null
+            },
+            {
+                "category": "Accounts Receivable",
+                "question": "Do you require custom fields for customer reporting?",
+                "context": null
+            }
+        ],
+        "order_entry_questions": [
+            {
+                "category": "Order Entry",
+                "question": "Please describe the goods or services you sell",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Can you define item groups for order entry?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Describe your desired sales workflow",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Which workflow steps should post to AR and/or GL?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "What specific sales documents are required in the workflow?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Describe your document numbering sequence for each workflow step",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Are there editing/deleting restrictions throughout the workflow?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "At which step should VAT be introduced in the sales workflow?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Will any sales transactions be integrated from external systems?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Do you require recurring order entry transactions?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Do you require pricelists for sales?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Do you issue credits to customers?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "How are sales orders provided to customers?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Describe sales order format requirements and required fields",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Do sales orders require customer-specific information like part numbers?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "List and describe shipping methods required for sales orders",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Describe requirements for sales order returns",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Do you require the ability to reclassify AR sales invoices and adjustments?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Do you need to control GL posting date separately from invoice date?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "How do you distribute invoices to customers?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "Will you import invoices or enter them manually?",
+                "context": null
+            },
+            {
+                "category": "Order Entry",
+                "question": "What are your invoice format requirements?",
+                "context": "Please provide a sample if possible"
+            },
+            {
+                "category": "Order Entry",
+                "question": "How should goods/services appear on your invoices?",
+                "context": null
+            }
+        ],
+        "pea_questions": [
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "What accounting periods will be used in Sage Intacct?",
+                "context": "Standard calendar, 4-4-5, 4-5-4, 5-4-4, 13 periods, etc."
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Are any methods other than straight-line used for amortization?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "How are first and last month's amortization calculated?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Have any standard dimensions been renamed?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Are prepaid expenses amortized to single or multiple dimensions?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Are all amortization entries posted on a specific day of the month?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "How many entities track and amortize prepaid expenses?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Does each entity have different base currencies?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Are prepaid expenses entered in base or transactional currencies?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Are dimensions required for expense and prepaid asset GL accounts?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "How are prepaid expenses created - via AP invoices or purchasing transactions?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "When entering AP invoices, do users select GL accounts or use account labels?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Are AP invoices manually entered or imported via CSV?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Where are AP invoices/purchasing transactions entered - top level or entity level?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Do AP or purchasing modules integrate with third-party systems?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "What statuses are assigned to imported/integrated invoices?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Which purchasing transaction definitions post to AP?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "How are credits treated against invoices being amortized as prepaid expenses?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "Do you need to load existing prepaid schedules for go-live?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "How many new prepaid schedules do you anticipate creating monthly?",
+                "context": null
+            },
+            {
+                "category": "Prepaid Expense Amortization",
+                "question": "What additional prepaid expense reports do you require beyond the standard 3?",
+                "context": "Standard reports: Schedule Detail, Schedule Reconciliation, Schedule Forecast"
+            }
+        ]
+    }
+}
